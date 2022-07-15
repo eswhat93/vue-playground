@@ -4,6 +4,7 @@
         <input 
         type="text" 
         v-model="newTodoItem" 
+        @keyup.enter="addToDo"
         class="w-1/2 bg-white rounded shadow-lg focus:border-indigo-500 py-1 px-3">
         
         <button 
@@ -25,8 +26,7 @@
         methods:{
             addToDo(){
                 if(this.newTodoItem !== ''){
-                    let obj={completed:false,item:this.newTodoItem};
-                    localStorage.setItem(this.newTodoItem,JSON.stringify(obj));
+                    this.$emit("addTodoItem",this.newTodoItem);
                     this.clearInput();
                 }
             },
