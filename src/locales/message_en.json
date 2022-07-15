@@ -1,0 +1,7 @@
+{
+   "form":{
+        "check":{
+            "empty":"Please enter text"   
+        }
+    }
+}

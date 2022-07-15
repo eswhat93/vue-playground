@@ -17,22 +17,31 @@
     </div>
 </template>
 <script>
-    export default{
-        data(){
-            return{
-                newTodoItem:''
+import Swal from 'sweetalert2'
+
+export default{
+    data(){
+        return{
+            newTodoItem:''
+        }
+    },
+    methods:{
+        addToDo(){
+            if(this.newTodoItem !== ''){
+                this.$emit("addTodoItem",this.newTodoItem);
+                this.clearInput();
+            }else{
+                Swal.fire({
+                    title: '',
+                    text: this.$t('form.check.empty'),
+                    icon: 'error',
+                    confirmButtonText: '닫기'
+                })
             }
         },
-        methods:{
-            addToDo(){
-                if(this.newTodoItem !== ''){
-                    this.$emit("addTodoItem",this.newTodoItem);
-                    this.clearInput();
-                }
-            },
-            clearInput(){
-                this.newTodoItem = ''
-            }
+        clearInput(){
+            this.newTodoItem = ''
         }
     }
+}
 </script>
