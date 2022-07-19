@@ -3,7 +3,7 @@
         
         <li
         class="flex justify-between lg:w-2/5 h-20 p-4 mx-auto rounded shadow-lg ml-auto items-center"
-        v-for="(todoItem, index) in todoItems" 
+        v-for="(todoItem, index) in this.$store.state.todoItems" 
         :key="index"
         >
         <div :class="{'line-through': todoItem.completed }">
@@ -23,13 +23,12 @@
 </template>
 <script>
 export default{
-    props:['todoItems'],
     methods:{
         removeItem(todoItem,index){
-            this.$emit('removeItem',todoItem,index);
+            this.$store.commit('removeItem',{todoItem,index})
         },
         toggleComplete(todoItem,index){
-            this.$emit('toggleComplete',todoItem,index);
+            this.$store.commit('toggleComplete',{todoItem,index})
         }
     }
 }

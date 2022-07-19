@@ -28,14 +28,14 @@ export default{
     methods:{
         addToDo(){
             if(this.newTodoItem !== ''){
-                this.$emit("addTodoItem",this.newTodoItem);
+                this.$store.commit('addTodoItem',this.newTodoItem)
                 this.clearInput();
             }else{
                 Swal.fire({
                     title: '',
                     text: this.$t('form.check.empty'),
                     icon: 'error',
-                    confirmButtonText: '닫기'
+                    confirmButtonText: this.$t('button.close')
                 })
             }
         },

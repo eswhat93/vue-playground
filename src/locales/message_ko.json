@@ -1,8 +1,22 @@
 {
+    "menu": {
+        "todo": "할 일",
+        "myPage": "마이페이지",
+        "contact": "contact"
+      },
+      "login":{
+        "title":"로그인",
+        "id":"아이디",
+        "password":"비밀번호",
+        "idError":"아이디를 확인해주세요",
+        "passwordError": "패스워드를 확인해주세요"
+    },
     "form":{
          "check":{
              "empty":"텍스트를 입력해 주세요"   
          }
-     }
+     },"button":{
+        "close":"닫기"
+    }
  }
  

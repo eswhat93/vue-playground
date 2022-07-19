@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container grid justify-items-center mx-auto flex flex-wrap p-5 c md:flex-row items-center">
     <span 
-    class="text-white bg-red-500 border-0 ml-0.5 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+    class="lg:w-2/5 inline-flex lg:justify-center ml-5 lg:ml-0 text-white bg-red-500 border-0 ml-0.5 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
     @click="allRemove"
     >
       clear All
@@ -12,8 +12,7 @@
   export default{
     methods:{
       allRemove(){
-        this.$emit('clearAll');
-        localStorage.clear();
+        this.$store.commit('clearAll')
       }
     }
   }

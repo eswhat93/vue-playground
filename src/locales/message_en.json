@@ -1,7 +1,24 @@
 {
+    "menu": {
+        "todo": "todo",
+        "myPage": "my page",
+        "contact": "contact"
+      },
+      "login":{
+        "title":"login",
+        "id":"id",
+        "password":"password",
+        "idError":"Confirm ID",
+        "passwordError": "Confirm Password"
+
+    },
    "form":{
         "check":{
             "empty":"Please enter text"   
         }
+    },
+    "button":{
+        "close":"close"
     }
+    
 }

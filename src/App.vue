@@ -7,6 +7,7 @@
     @toggleComplete="toggleComplete"
     ></List>
     <Footer @clearAll="clearAll"></Footer>
+    <!-- <router-view></router-view> -->
 </template>
 
 <script>
@@ -26,36 +27,8 @@ export default  {
     return{
       todoItems:[]
     }
-  },
-  methods:{
-    addTodoItem(newTodoItem){
-      let obj={completed:false,item:newTodoItem};
-      localStorage.setItem(newTodoItem,JSON.stringify(obj));
-      this.todoItems.push(obj);
-
-      console.log(this.todoItems)
-    },
-    removeItem(todoItem,index){
-            localStorage.removeItem(todoItem);
-            this.todoItems.splice(index,1);
-    },
-    toggleComplete(todoItem,index){
-          todoItem.completed = !todoItem.completed;
-          localStorage.removeItem(todoItem.item);
-          localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    },
-    clearAll(){
-      this.todoItems=[];
-      localStorage.clear();
-    },
-  },
-  created(){
-        if(localStorage.length>0){
-            for(let i=0;i<localStorage.length;i++){
-                this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-            }
-        }
-    }
+  }
+  
 }
 </script>
 
