@@ -1,27 +1,27 @@
 <template>
-    <Header></Header>
-    <Input @addTodoItem="addTodoItem"></Input>
-    <List 
+    <AppHeader></AppHeader>
+    <TodoItem @addTodoItem="addTodoItem"></TodoItem>
+    <TodoItemList 
     :todoItems="todoItems"
     @removeItem="removeItem"
     @toggleComplete="toggleComplete"
-    ></List>
-    <Footer @clearAll="clearAll"></Footer>
+    ></TodoItemList>
+    <AppFooter @clearAll="clearAll"></AppFooter>
     <!-- <router-view></router-view> -->
 </template>
 
 <script>
-import Header from './components/common/Header.vue'
-import Input from './components/common/input.vue'
-import List from './components/common/list.vue'
-import Footer from './components/common/Footer.vue'
+import AppHeader from '@/components/common/AppHeader.vue'
+import TodoItem from '@/components/TodoItem.vue'
+import TodoItemList from '@/components/TodoItemList.vue'
+import AppFooter from '@/components/common/AppFooter.vue'
 
 export default  {
   components:{
-    Header,
-    Input,
-    List,
-    Footer
+    AppHeader,
+    TodoItem,
+    TodoItemList,
+    AppFooter
   },
   data(){
     return{

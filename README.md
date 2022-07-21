@@ -16,3 +16,7 @@ git remote add origin https://github.com/eswhat93/vue-playground.git
 git push -u origin main
 
 develop branch 생성
+
+
+# lint, prettier
+ESLint가 수정 가능한 오류를 보고하고 수정하고 Prettier가 소스 코드를 다시 포맷하도록 설정

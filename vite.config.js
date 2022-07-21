@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,5 +12,11 @@ export default defineConfig({
     proxy:{
       "/api":"http://localhost:8080",
     }
+  },
+  // 절대경로 설정
+  resolve:{
+    alias:[
+      {find: '@', replacement:resolve(__dirname,'src')},
+    ]
   }
 })
