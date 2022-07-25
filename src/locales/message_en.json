@@ -4,8 +4,9 @@
         "myPage": "my page",
         "contact": "contact"
       },
-      "login":{
-        "title":"login",
+      "member":{
+        "signup":"signup",
+        "login":"login",
         "id":"id",
         "password":"password",
         "idError":"Confirm ID",

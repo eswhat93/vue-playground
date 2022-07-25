@@ -4,8 +4,9 @@
         "myPage": "마이페이지",
         "contact": "contact"
       },
-      "login":{
-        "title":"로그인",
+      "member":{
+        "signup":"회원가입",
+        "login":"로그인",
         "id":"아이디",
         "password":"비밀번호",
         "idError":"아이디를 확인해주세요",
