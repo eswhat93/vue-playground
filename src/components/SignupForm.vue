@@ -15,7 +15,7 @@
         />
     </div>
     <div>
-        <label for="userId"
+        <label for="password"
         class="flex justify-between lg:w-2/5 h-10 mx-auto ml-auto items-center"
         >PW </label>
         <input 
@@ -47,6 +47,8 @@
 
 <script>
 import {registerUser} from '@/api/index'
+import Swal from 'sweetalert2'
+
 export default {
     data(){
         return{
@@ -61,12 +63,19 @@ export default {
         async submitSignupData(){
             const userData = {
                 id: this.userId,
-                name: this.username,
+                userName: this.userName,
                 password : this.password
             }
             const { data } = await registerUser(userData)
-            console.log(data.userName)
-            this.logMessage = `${data.userName} 님이 가입되었습니다`;
+            if(data.userName){
+                Swal.fire({
+                title: '',
+                text: this.$t('member.signupSuccess',{userName: data.userName}),
+                icon: 'success',
+                confirmButtonText: this.$t('button.close')
+                })
+                this.$router.push('/login');
+            }
             this.initForm();
         },
         initForm(){

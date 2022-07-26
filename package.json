@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "sweetalert2": "^11.4.23",
+    "vee-validate": "^4.6.2",
     "vue": "^3.2.25",
     "vue-i18n": "^9.1.10",
     "vue-router": "^4.0.13",
@@ -23,5 +24,5 @@
     "tailwindcss": "^3.1.5",
     "vite": "^2.9.9"
   },
-  "proxy":"http://localhost:8080"
+  "proxy": "http://localhost:8080"
 }

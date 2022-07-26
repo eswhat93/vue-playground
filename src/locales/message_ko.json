@@ -6,6 +6,7 @@
       },
       "member":{
         "signup":"회원가입",
+        "signupSuccess":"{userName} 님 환영해요!",
         "login":"로그인",
         "id":"아이디",
         "password":"비밀번호",
@@ -18,6 +19,10 @@
          }
      },"button":{
         "close":"닫기"
+    },
+    "message":{
+        "todo":"오늘은 무엇을 할까?"
     }
+    
  }
  

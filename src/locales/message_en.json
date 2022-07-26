@@ -6,6 +6,7 @@
       },
       "member":{
         "signup":"signup",
+        "signupSuccess":" welcome {userName}!",
         "login":"login",
         "id":"id",
         "password":"password",
@@ -20,6 +21,9 @@
     },
     "button":{
         "close":"close"
+    },
+    "message":{
+        "todo":"What should we do today?"
     }
     
 }

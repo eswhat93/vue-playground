@@ -46,13 +46,22 @@ export default{
     },
     methods:{
         async submitLoginData(){
-            const userData = {
-                id:this.userId,
-                password:this.password
+            try{
+                const userData = {
+                    id:this.userId,
+                    password:this.password
+                }
+                const {data} = await loginUser(userData);
+            
+                if(data.userName){
+                    this.$router.push('/');
+                }
+                
+            }catch(error){
+                console.log(error.response.data);
+            } finally{
+                this.initForm
             }
-            const {data} = await loginUser(userData);
-            console.log(data.userName);
-            this.initForm();
         },
         initForm(){
             this.userId='',
