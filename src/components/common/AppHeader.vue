@@ -13,12 +13,17 @@
         <a class="hover:text-gray-900"></a>
       </nav>
       <div class="lg:w-2/5 inline-flex lg:justify-end lg:ml-0">
-        <button class="inline-flex items-center bg-gray-200 border-0 mx-1 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">
-          <router-link to="/login">{{ login }}</router-link>
-        </button>
-        <button class="inline-flex items-center bg-gray-200 border-0 mx-1 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">
-          <router-link to="/signup">{{ signup }}</router-link>
-        </button>
+        <template v-if="isUserLogin">
+          <span>{{ userId }}</span>
+        </template>
+        <template v-else>
+          <button class="inline-flex items-center bg-gray-200 border-0 mx-1 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">
+            <router-link to="/login">{{ login }}</router-link>
+          </button>
+          <button class="inline-flex items-center bg-gray-200 border-0 mx-1 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">
+            <router-link to="/signup">{{ signup }}</router-link>
+          </button>
+        </template>
       </div>
       <a class="flex order-first lg:order-none lg:w-1/12 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-end mb-4 md:mb-0">
         
@@ -36,7 +41,14 @@
     data(){
       return{
         login : this.$t('member.login'),
-        signup : this.$t('member.signup')
+        signup : this.$t('member.signup'),
+        userId : this.$store.state.auth.userId
+      }
+    },
+    computed:{
+      isUserLogin(){
+        console.log(this.$store)
+        return this.$store.getters['auth/isLogin']
       }
     }
   }

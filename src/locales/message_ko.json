@@ -6,7 +6,7 @@
       },
       "member":{
         "signup":"회원가입",
-        "signupSuccess":"{userName} 님 환영해요!",
+        "signupSuccess":"회원가입에 성공하였습니다. 로그인 해주세요!",
         "login":"로그인",
         "id":"아이디",
         "password":"비밀번호",

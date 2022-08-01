@@ -36,6 +36,8 @@
 </template>
 <script>
 import {loginUser} from '@/api/index'
+import Swal from 'sweetalert2'
+
 export default{
     data(){
         return{
@@ -48,17 +50,24 @@ export default{
         async submitLoginData(){
             try{
                 const userData = {
-                    id:this.userId,
+                    userId:this.userId,
                     password:this.password
                 }
                 const {data} = await loginUser(userData);
-            
-                if(data.userName){
+                if(data.msg === "success"){
                     this.$router.push('/');
+                    this.$store.commit('auth/setUserId',data);
+                }else{
+                    Swal.fire({
+                    title: '',
+                    text: data.msg.message,
+                    icon: 'error',
+                    confirmButtonText: this.$t('button.close')
+                    })
                 }
-                
+
             }catch(error){
-                console.log(error.response.data);
+                console.log(error);
             } finally{
                 this.initForm
             }

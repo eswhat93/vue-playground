@@ -62,19 +62,32 @@ export default {
     methods:{
         async submitSignupData(){
             const userData = {
-                id: this.userId,
+                userId: this.userId,
                 userName: this.userName,
                 password : this.password
             }
-            const { data } = await registerUser(userData)
-            if(data.userName){
-                Swal.fire({
-                title: '',
-                text: this.$t('member.signupSuccess',{userName: data.userName}),
-                icon: 'success',
-                confirmButtonText: this.$t('button.close')
-                })
-                this.$router.push('/login');
+
+            try{
+                const { data } = await registerUser(userData)
+                if(data.msg === "success"){
+                    Swal.fire({
+                        title: '',
+                    text: this.$t('member.signupSuccess'),
+                    icon: 'success',
+                    confirmButtonText: this.$t('button.close')
+                    })
+                    this.$router.push('/login');
+                }else{
+                    Swal.fire({
+                    title: '',
+                    text: data.msg.message,
+                    icon: 'error',
+                    confirmButtonText: this.$t('button.close')
+                    })
+                }
+            }catch(err){
+                console.log(err)
+                
             }
             this.initForm();
         },

@@ -6,7 +6,7 @@
       },
       "member":{
         "signup":"signup",
-        "signupSuccess":" welcome {userName}!",
+        "signupSuccess":"Membership registration was successful. Please log in!",
         "login":"login",
         "id":"id",
         "password":"password",

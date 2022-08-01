@@ -12,6 +12,7 @@
     "sweetalert2": "^11.4.23",
     "vee-validate": "^4.6.2",
     "vue": "^3.2.25",
+    "vue-cookies": "^1.8.1",
     "vue-i18n": "^9.1.10",
     "vue-router": "^4.0.13",
     "vuex": "^4.0.2"
